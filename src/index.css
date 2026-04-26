@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+:root {
+  --bg: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  --pink: #ff00ff;
+  --cyan: #00ffff;
+  --yellow: #f0f000;
+  --text: #e0e0e0;
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  padding: 1rem;
+}
+
+#root { width: 100%; max-width: 1000px; }
+
+/* Container utama */
+.machine-container {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--pink), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Panel display teks */
+.display-panel {
+  background: #000;
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.display-text {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--cyan);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Grid tombol */
+.pad-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+/* Style tombol drum */
+.drum-pad {
+  width: calc(20% - 1rem);
+  min-width: 110px;
+  aspect-ratio: 1;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  transition: 0.1s;
+}
+
+.drum-pad span { font-size: 0.7rem; margin-top: 0.4rem; opacity: 0.6; }
+
+/* Warna saat aktif */
+.drum-pad.active.pink { background: var(--pink); box-shadow: 0 0 20px var(--pink); color: #fff; }
+.drum-pad.active.cyan { background: var(--cyan); box-shadow: 0 0 20px var(--cyan); color: #000; }
+.drum-pad.active.yellow { background: var(--yellow); box-shadow: 0 0 20px var(--yellow); color: #000; }
+
+/* Slider volume */
+.controls { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .drum-pad { width: calc(33.33% - 1rem); }
+  h1 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .drum-pad { width: calc(50% - 1rem); min-width: 80px; font-size: 1.2rem; }
+  .machine-container { padding: 1rem; margin-top: 1rem; }
+}
