@@ -17,7 +17,7 @@ A premium, interactive drum machine built with **React.js** and **Vite**. This p
 ## 🚀 How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone <repo-url>
    ```
 2. Install dependencies:
    ```bash
